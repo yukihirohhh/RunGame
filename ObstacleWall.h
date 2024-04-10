@@ -3,7 +3,7 @@
 class ObstacleWall :
     public GameObject
 {
-
+	int hObstacle_;
 public:
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）

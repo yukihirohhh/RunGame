@@ -4,8 +4,7 @@
 
 
 Player::Player(GameObject* parent)
-	:GameObject(parent, "Player"),
-	hPlayer_(-1)
+	:GameObject(parent, "Player"),hPlayer_(-1)
 {
 }
 
