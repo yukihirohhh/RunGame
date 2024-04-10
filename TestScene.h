@@ -4,6 +4,9 @@
 //テストシーンを管理するクラス
 class TestScene : public GameObject
 {
+	void LeftWall();
+	void RightWall();
+	void MidWall();
 public:
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）

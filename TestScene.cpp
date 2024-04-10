@@ -1,44 +1,66 @@
-#include "TestScene.h"
+ï»¿#include "TestScene.h"
 #include "Player.h"
 #include "ObstacleWall.h"
 #include "Engine/Camera.h"
+#include "time.h"
 
 
-//ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-TestScene::TestScene(GameObject * parent)
-	: GameObject(parent, "TestScene")
+void TestScene::LeftWall()
 {
-}
-
-//‰Šú‰»
-void TestScene::Initialize()
-{
-	Instantiate<Player>(this);
     ObstacleWall* obstacle1 = Instantiate<ObstacleWall>(this);
     obstacle1->SetPosition({ -1.2, 0, 20 });
 
 
     ObstacleWall* obstacle2 = Instantiate<ObstacleWall>(this);
     obstacle2->SetPosition({ 0, 0, 20 });
+}
+
+void TestScene::RightWall()
+{
+    ObstacleWall* obstacle2 = Instantiate<ObstacleWall>(this);
+    obstacle2->SetPosition({ 0, 0, 20 });
 
 
     ObstacleWall* obstacle3 = Instantiate<ObstacleWall>(this);
     obstacle3->SetPosition({ 1.2, 0, 20 });
-	Camera::SetPosition({ 0,8,-8 });
-
 }
 
-//XV
+void TestScene::MidWall()
+{
+    ObstacleWall* obstacle1 = Instantiate<ObstacleWall>(this);
+    obstacle1->SetPosition({ -1.2, 0, 20 });
+
+    ObstacleWall* obstacle3 = Instantiate<ObstacleWall>(this);
+    obstacle3->SetPosition({ 1.2, 0, 20 });
+}
+
+//ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+TestScene::TestScene(GameObject * parent)
+	: GameObject(parent, "TestScene")
+{
+}
+
+//åˆæœŸåŒ–
+void TestScene::Initialize()
+{
+	Instantiate<Player>(this);
+
+    MidWall();
+
+	Camera::SetPosition({ 0,8,-8 });
+}
+
+//æ›´æ–°
 void TestScene::Update()
 {
 }
 
-//•`‰æ
+//æç”»
 void TestScene::Draw()
 {
 }
 
-//ŠJ•ú
+//é–‹æ”¾
 void TestScene::Release()
 {
 }
