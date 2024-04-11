@@ -1,16 +1,14 @@
-ï»¿#include "TestScene.h"
+#include "PlayScene.h"
 #include "Player.h"
 #include "ObstacleWall.h"
 #include "Engine/Camera.h"
 #include "time.h"
-#include <random>
-#include <chrono>
 #include <thread>
 #include <chrono>
 
 std::chrono::steady_clock::time_point lastTime = std::chrono::steady_clock::now();
 
-void TestScene::LeftWall()
+void PlayScene::LeftWall()
 {
     ObstacleWall* obstacle1 = Instantiate<ObstacleWall>(this);
     obstacle1->SetPosition({ -1.2, 0, 20 });
@@ -20,7 +18,7 @@ void TestScene::LeftWall()
     obstacle2->SetPosition({ 0, 0, 20 });
 }
 
-void TestScene::RightWall()
+void PlayScene::RightWall()
 {
     ObstacleWall* obstacle2 = Instantiate<ObstacleWall>(this);
     obstacle2->SetPosition({ 0, 0, 20 });
@@ -30,7 +28,7 @@ void TestScene::RightWall()
     obstacle3->SetPosition({ 1.2, 0, 20 });
 }
 
-void TestScene::MidWall()
+void PlayScene::MidWall()
 {
     ObstacleWall* obstacle1 = Instantiate<ObstacleWall>(this);
     obstacle1->SetPosition({ -1.2, 0, 20 });
@@ -39,27 +37,27 @@ void TestScene::MidWall()
     obstacle3->SetPosition({ 1.2, 0, 20 });
 }
 
-//ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
-TestScene::TestScene(GameObject * parent)
-	: GameObject(parent, "TestScene")
+//ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+PlayScene::PlayScene(GameObject* parent)
+    : GameObject(parent, "PlayScene")
 {
 }
 
-//åˆæœŸåŒ–
-void TestScene::Initialize()
+//‰Šú‰»
+void PlayScene::Initialize()
 {
     Instantiate<Player>(this);
     Camera::SetPosition({ 0,8,-8 });
 }
 
-//æ›´æ–°
-void TestScene::Update()
+//XV
+void PlayScene::Update()
 {
     auto currentTime = std::chrono::steady_clock::now();
     auto timeDiff = std::chrono::duration_cast<std::chrono::seconds>(currentTime - lastTime).count();
 
     if (timeDiff >= 1) {
-        lastTime = currentTime; // æ™‚é–“ã‚’ãƒªã‚»ãƒƒãƒˆ
+        lastTime = currentTime; // ŠÔ‚ğƒŠƒZƒbƒg
 
         int random = rand() % 3;
         switch (random) {
@@ -76,13 +74,13 @@ void TestScene::Update()
     }
 }
 
-//æç”»
-void TestScene::Draw()
+//•`‰æ
+void PlayScene::Draw()
 {
 }
 
-//é–‹æ”¾
-void TestScene::Release()
+//ŠJ•ú
+void PlayScene::Release()
 {
 }
 

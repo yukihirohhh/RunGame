@@ -148,9 +148,10 @@
     <ClCompile Include="Engine\Text.cpp" />
     <ClCompile Include="Engine\Texture.cpp" />
     <ClCompile Include="Engine\Transform.cpp" />
+    <ClCompile Include="GameOverScene.cpp" />
     <ClCompile Include="ObstacleWall.cpp" />
     <ClCompile Include="Player.cpp" />
-    <ClCompile Include="TestScene.cpp" />
+    <ClCompile Include="PlayScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Audio.h" />
@@ -176,9 +177,10 @@
     <ClInclude Include="Engine\Text.h" />
     <ClInclude Include="Engine\Texture.h" />
     <ClInclude Include="Engine\Transform.h" />
+    <ClInclude Include="GameOverScene.h" />
     <ClInclude Include="ObstacleWall.h" />
     <ClInclude Include="Player.h" />
-    <ClInclude Include="TestScene.h" />
+    <ClInclude Include="PlayScene.h" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Assets\Shader\BillBoard.hlsl">

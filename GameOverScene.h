@@ -1,16 +1,13 @@
 #pragma once
 #include "Engine/GameObject.h"
-
-//テストシーンを管理するクラス
-class TestScene : public GameObject
+class GameOverScene :
+    public GameObject
 {
-	void LeftWall();
-	void RightWall();
-	void MidWall();
+	int hPict_;
 public:
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）
-	TestScene(GameObject* parent);
+	GameOverScene(GameObject* parent);
 
 	//初期化
 	void Initialize() override;
@@ -24,3 +21,4 @@ public:
 	//開放
 	void Release() override;
 };
+

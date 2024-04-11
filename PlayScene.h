@@ -1,20 +1,26 @@
 #pragma once
 #include "Engine/GameObject.h"
-class ObstacleWall :
+class PlayScene :
     public GameObject
 {
-	int hObstacle_;
-	BoxCollider* collider_;
+	void LeftWall();
+	void RightWall();
+	void MidWall();
 public:
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）
-	ObstacleWall(GameObject* parent);
+	PlayScene(GameObject* parent);
 
+	//初期化
 	void Initialize() override;
 
+	//更新
 	void Update() override;
 
+	//描画
 	void Draw() override;
 
+	//開放
 	void Release() override;
 };
+

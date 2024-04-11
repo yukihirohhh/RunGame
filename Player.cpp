@@ -1,6 +1,8 @@
 #include "Player.h"
 #include "Engine/Model.h"
 #include "Engine/Input.h"
+#include "Engine/BoxCollider.h"
+#include "Engine/SceneManager.h"
 
 
 Player::Player(GameObject* parent)
@@ -30,7 +32,8 @@ void Player::Update()
 		transform_.position_.x = min(transform_.position_.x + 1.2, 1.2); // ‰E‚ÉˆÚ“®
 	}
 
-
+	BoxCollider* collision = new BoxCollider(XMFLOAT3(0, 0, 0), XMFLOAT3(1, 1, 1));
+	AddCollider(collision);
 }
 
 
@@ -42,4 +45,10 @@ void Player::Draw()
 
 void Player::Release()
 {
+}
+
+void Player::OnCollision(GameObject* pTarget)
+{
+	SceneManager* pSceneManager = (SceneManager*)FindObject("SceneManager");
+	pSceneManager->ChangeScene(SCENE_ID_GAMEOVER);
 }
