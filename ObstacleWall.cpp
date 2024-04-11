@@ -16,9 +16,13 @@ void ObstacleWall::Initialize()
 
 void ObstacleWall::Update()
 {
-    const float moveSpeed = 0.08f;
+    const float moveSpeed = 0.438f;
 
     transform_.position_.z -= moveSpeed;
+    if (transform_.position_.z <= -5)
+    {
+        KillMe();
+    }
 }
 
 void ObstacleWall::Draw()

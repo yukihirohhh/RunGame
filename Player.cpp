@@ -29,6 +29,8 @@ void Player::Update()
 	{
 		transform_.position_.x = min(transform_.position_.x + 1.2, 1.2); // ‰E‚ÉˆÚ“®
 	}
+
+
 }
 
 

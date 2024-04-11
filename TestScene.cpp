@@ -3,7 +3,12 @@
 #include "ObstacleWall.h"
 #include "Engine/Camera.h"
 #include "time.h"
+#include <random>
+#include <chrono>
+#include <thread>
+#include <chrono>
 
+std::chrono::steady_clock::time_point lastTime = std::chrono::steady_clock::now();
 
 void TestScene::LeftWall()
 {
@@ -43,16 +48,32 @@ TestScene::TestScene(GameObject * parent)
 //初期化
 void TestScene::Initialize()
 {
-	Instantiate<Player>(this);
-
-    MidWall();
-
-	Camera::SetPosition({ 0,8,-8 });
+    Instantiate<Player>(this);
+    Camera::SetPosition({ 0,8,-8 });
 }
 
 //更新
 void TestScene::Update()
 {
+    auto currentTime = std::chrono::steady_clock::now();
+    auto timeDiff = std::chrono::duration_cast<std::chrono::seconds>(currentTime - lastTime).count();
+
+    if (timeDiff >= 1) {
+        lastTime = currentTime; // 時間をリセット
+
+        int random = rand() % 3;
+        switch (random) {
+        case 0:
+            MidWall();
+            break;
+        case 1:
+            RightWall();
+            break;
+        case 2:
+            LeftWall();
+            break;
+        }
+    }
 }
 
 //描画
