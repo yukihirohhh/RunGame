@@ -5,6 +5,7 @@
 #include "time.h"
 #include <thread>
 #include <chrono>
+#include "Engine/Model.h"
 
 std::chrono::steady_clock::time_point lastTime = std::chrono::steady_clock::now();
 
@@ -39,13 +40,16 @@ void PlayScene::MidWall()
 
 //コンストラクタ
 PlayScene::PlayScene(GameObject* parent)
-    : GameObject(parent, "PlayScene")
+    : GameObject(parent, "PlayScene"), hGround_(-1)
 {
 }
 
 //初期化
 void PlayScene::Initialize()
 {
+    hGround_ = Model::Load("ground.fbx");
+    assert(hGround_ >= 0);
+
     Instantiate<Player>(this);
     Camera::SetPosition({ 0,8,-8 });
 }
@@ -77,6 +81,8 @@ void PlayScene::Update()
 //描画
 void PlayScene::Draw()
 {
+    Model::SetTransform(hGround_, transform_);
+    Model::Draw(hGround_);
 }
 
 //開放

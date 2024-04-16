@@ -6,6 +6,7 @@ class PlayScene :
 	void LeftWall();
 	void RightWall();
 	void MidWall();
+	int hGround_;
 public:
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）
