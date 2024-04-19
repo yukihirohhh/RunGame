@@ -12,30 +12,30 @@ std::chrono::steady_clock::time_point lastTime = std::chrono::steady_clock::now(
 void PlayScene::LeftWall()
 {
     ObstacleWall* obstacle1 = Instantiate<ObstacleWall>(this);
-    obstacle1->SetPosition({ -1.2, 0, 20 });
+    obstacle1->SetPosition({ -1.2, 1, 20 });
 
 
     ObstacleWall* obstacle2 = Instantiate<ObstacleWall>(this);
-    obstacle2->SetPosition({ 0, 0, 20 });
+    obstacle2->SetPosition({ 0, 1, 20 });
 }
 
 void PlayScene::RightWall()
 {
     ObstacleWall* obstacle2 = Instantiate<ObstacleWall>(this);
-    obstacle2->SetPosition({ 0, 0, 20 });
+    obstacle2->SetPosition({ 0, 1, 20 });
 
 
     ObstacleWall* obstacle3 = Instantiate<ObstacleWall>(this);
-    obstacle3->SetPosition({ 1.2, 0, 20 });
+    obstacle3->SetPosition({ 1.2, 1, 20 });
 }
 
 void PlayScene::MidWall()
 {
     ObstacleWall* obstacle1 = Instantiate<ObstacleWall>(this);
-    obstacle1->SetPosition({ -1.2, 0, 20 });
+    obstacle1->SetPosition({ -1.2, 1, 20 });
 
     ObstacleWall* obstacle3 = Instantiate<ObstacleWall>(this);
-    obstacle3->SetPosition({ 1.2, 0, 20 });
+    obstacle3->SetPosition({ 1.2, 1, 20 });
 }
 
 //コンストラクタ

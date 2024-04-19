@@ -12,10 +12,11 @@ Player::Player(GameObject* parent)
 
 void Player::Initialize()
 {
-	hPlayer_ = Model::Load("Box.fbx");
+	hPlayer_ = Model::Load("Tank.fbx");
 	assert(hPlayer_ >= 0);
 
 	transform_.position_.x = 0;
+	transform_.position_.y = 1;
 	transform_.position_.z = -3;
 	
 }
