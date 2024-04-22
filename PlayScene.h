@@ -1,5 +1,7 @@
 #pragma once
 #include "Engine/GameObject.h"
+#include "Engine/Text.h"
+
 class PlayScene :
     public GameObject
 {
@@ -7,6 +9,8 @@ class PlayScene :
 	void RightWall();
 	void MidWall();
 	int hGround_;
+	Text* pText;
+	int pScore;
 public:
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）

@@ -40,7 +40,7 @@ void PlayScene::MidWall()
 
 //コンストラクタ
 PlayScene::PlayScene(GameObject* parent)
-    : GameObject(parent, "PlayScene"), hGround_(-1)
+    : GameObject(parent, "PlayScene"), hGround_(-1),pText(nullptr),pScore(0)
 {
 }
 
@@ -49,6 +49,9 @@ void PlayScene::Initialize()
 {
     hGround_ = Model::Load("ground.fbx");
     assert(hGround_ >= 0);
+
+    pText = new Text;
+    pText->Initialize();
 
     Instantiate<Player>(this);
     Camera::SetPosition({ 0,8,-8 });
@@ -81,8 +84,12 @@ void PlayScene::Update()
 //描画
 void PlayScene::Draw()
 {
+    
     Model::SetTransform(hGround_, transform_);
     Model::Draw(hGround_);
+
+    pText->Draw(50, 50, "SCORE:");
+    pText->Draw(150, 50, pScore);
 }
 
 //開放

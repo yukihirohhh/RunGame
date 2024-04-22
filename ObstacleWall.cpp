@@ -3,7 +3,6 @@
 #include "Engine/Input.h"
 #include "Engine/BoxCollider.h"
 
-
 ObstacleWall::ObstacleWall(GameObject* parent)
 :GameObject(parent,"Obstacle"),hObstacle_(-1),collider_(nullptr)
 {
@@ -23,6 +22,7 @@ void ObstacleWall::Update()
 {
     float moveSpeed = 0.2f;
     transform_.position_.z -= moveSpeed;
+
     if (transform_.position_.z <= -6)
     {
         KillMe();
