@@ -99,6 +99,7 @@
     <ClCompile Include="ObstacleWall.cpp" />
     <ClCompile Include="GameOverScene.cpp" />
     <ClCompile Include="PlayScene.cpp" />
+    <ClCompile Include="TitleScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\BoxCollider.h">
@@ -174,6 +175,7 @@
     <ClInclude Include="ObstacleWall.h" />
     <ClInclude Include="GameOverScene.h" />
     <ClInclude Include="PlayScene.h" />
+    <ClInclude Include="TitleScene.h" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Assets\Shader\Simple2D.hlsl">

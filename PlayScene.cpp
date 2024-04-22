@@ -60,7 +60,7 @@ void PlayScene::Update()
     auto currentTime = std::chrono::steady_clock::now();
     auto timeDiff = std::chrono::duration_cast<std::chrono::seconds>(currentTime - lastTime).count();
 
-    if (timeDiff >= 1) {
+    if (timeDiff >= 2) {
         lastTime = currentTime; // ŠÔ‚ğƒŠƒZƒbƒg
 
         int random = rand() % 3;

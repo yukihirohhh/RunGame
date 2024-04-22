@@ -21,7 +21,7 @@ void ObstacleWall::Initialize()
 
 void ObstacleWall::Update()
 {
-    float moveSpeed = 0.3f;
+    float moveSpeed = 0.2f;
     transform_.position_.z -= moveSpeed;
     if (transform_.position_.z <= -6)
     {
