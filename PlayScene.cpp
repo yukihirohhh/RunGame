@@ -40,7 +40,7 @@ void PlayScene::MidWall()
 
 //コンストラクタ
 PlayScene::PlayScene(GameObject* parent)
-    : GameObject(parent, "PlayScene"), hGround_(-1),pText(nullptr),pScore(0)
+    : GameObject(parent, "PlayScene"), hGround_(-1),pText(nullptr), pScore(0)
 {
 }
 
@@ -63,8 +63,11 @@ void PlayScene::Update()
     auto currentTime = std::chrono::steady_clock::now();
     auto timeDiff = std::chrono::duration_cast<std::chrono::seconds>(currentTime - lastTime).count();
 
+    
+
     if (timeDiff >= 2) {
         lastTime = currentTime; // 時間をリセット
+
 
         int random = rand() % 3;
         switch (random) {
@@ -78,18 +81,20 @@ void PlayScene::Update()
             LeftWall();
             break;
         }
+
+        pScore += 13;
+        
     }
 }
 
 //描画
 void PlayScene::Draw()
 {
-    
     Model::SetTransform(hGround_, transform_);
     Model::Draw(hGround_);
 
     pText->Draw(50, 50, "SCORE:");
-    pText->Draw(150, 50, pScore);
+    pText->Draw(150, 50, pScore );
 }
 
 //開放

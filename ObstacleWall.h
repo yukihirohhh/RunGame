@@ -7,6 +7,7 @@ class ObstacleWall :
 	int hObstacle_;
 	BoxCollider* collider_;
 public:
+
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）
 	ObstacleWall(GameObject* parent);

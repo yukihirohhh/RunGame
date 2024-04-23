@@ -10,10 +10,8 @@ class PlayScene :
 	void MidWall();
 	int hGround_;
 	Text* pText;
-	int pScore;
 public:
-	//コンストラクタ
-	//引数：parent  親オブジェクト（SceneManager）
+	int pScore;
 	PlayScene(GameObject* parent);
 
 	//初期化
