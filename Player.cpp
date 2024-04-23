@@ -18,6 +18,7 @@ void Player::Initialize()
 	transform_.position_.x = 0;
 	transform_.position_.y = 1;
 	transform_.position_.z = -3;
+	transform_.rotate_.y = 180;
 	
 }
 

@@ -50,11 +50,12 @@ void PlayScene::Initialize()
     hGround_ = Model::Load("ground.fbx");
     assert(hGround_ >= 0);
 
+    
     pText = new Text;
     pText->Initialize();
 
     Instantiate<Player>(this);
-    Camera::SetPosition({ 0,8,-8 });
+    Camera::SetPosition({ 0,5,-8 });
 }
 
 //XV
