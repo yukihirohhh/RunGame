@@ -14,7 +14,7 @@ void ObstacleWall::Initialize()
     hObstacle_ = Model::Load("ConcreteWall.fbx");
     assert(hObstacle_ >= 0);
 
-    BoxCollider* collision = new BoxCollider(XMFLOAT3(0, 0, 0), XMFLOAT3(1, 1, 1));
+    BoxCollider* collision = new BoxCollider(XMFLOAT3(0, 0, 0), XMFLOAT3(0.35, 0.35, 0.35));
     AddCollider(collision);
     
 }

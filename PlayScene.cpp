@@ -55,7 +55,7 @@ void PlayScene::Initialize()
     pText->Initialize();
 
     Instantiate<Player>(this);
-    Camera::SetPosition({ 0,5,-8 });
+    Camera::SetPosition({ 0,7,-8 });
 }
 
 //XV
