@@ -20,6 +20,9 @@ void Player::Initialize()
 	transform_.position_.z = -3;
 	transform_.rotate_.y = 180;
 	
+    BoxCollider* collision = new BoxCollider(XMFLOAT3(0, 0, 0), XMFLOAT3(0.6, 0.6, 0.6));
+    AddCollider(collision);
+
 }
 
 void Player::Update()
@@ -71,8 +74,7 @@ void Player::Update()
         transform_.position_.x = max(transform_.position_.x - moveAmount, targetPosition);
     }
 
-    BoxCollider* collision = new BoxCollider(XMFLOAT3(0, 0, 0), XMFLOAT3(0.6, 0.6, 0.6));
-    AddCollider(collision);
+   
 }
 
 void Player::Draw()
