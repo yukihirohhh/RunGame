@@ -10,6 +10,7 @@ class PlayScene :
 	void MidWall();
 	int hGround_;
 	Text* pText;
+
 public:
 	int pScore;
 	PlayScene(GameObject* parent);

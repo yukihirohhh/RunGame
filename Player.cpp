@@ -3,11 +3,13 @@
 #include "Engine/Input.h"
 #include "Engine/BoxCollider.h"
 #include "Engine/SceneManager.h"
-
+#include "Engine/Camera.h"
+#include <thread>
 
 Player::Player(GameObject* parent)
-	:GameObject(parent, "Player"),hPlayer_(-1)
+	:GameObject(parent, "Player"),hPlayer_(-1), obstacleWall_(nullptr)
 {
+//    obstacleWall_ = dynamic_cast<ObstacleWall*>(parent);
 }
 
 void Player::Initialize()
@@ -89,6 +91,8 @@ void Player::Release()
 
 void Player::OnCollision(GameObject* pTarget)
 {
-	SceneManager* pSceneManager = (SceneManager*)FindObject("SceneManager");
-	pSceneManager->ChangeScene(SCENE_ID_GAMEOVER);
+    std::this_thread::sleep_for(std::chrono::seconds(1));  // 1•b‘Ò‚¿
+
+    SceneManager* pSceneManager = (SceneManager*)FindObject("SceneManager");
+    pSceneManager->ChangeScene(SCENE_ID_GAMEOVER);
 }

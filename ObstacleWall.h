@@ -9,10 +9,10 @@ class ObstacleWall :
 	BoxCollider* collider_;
 private:
 	PlayScene* playScene_;
-	float moveSpeed;
 	int lastScore_;
+	Text* pText;
 public:
-
+	float moveSpeed;
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）
 	ObstacleWall(GameObject* parent);

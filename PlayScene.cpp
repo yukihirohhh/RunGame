@@ -86,6 +86,27 @@ void PlayScene::Update()
         pScore += 10;
         
     }
+
+
+    float shakeSwingWidth = 0.018;
+    float shakeSwingHeight = 0.023;
+    if (pScore >= 200) {
+        shakeSwingWidth += 0.014;
+        shakeSwingHeight += 0.01;
+        if (pScore >= 400) {
+            shakeSwingWidth += 0.016;
+            shakeSwingHeight += 0.011;
+        }
+    }
+    
+    float time = GetTickCount64();
+    float horizontalShakeAmount = (float)rand() / (float)RAND_MAX * shakeSwingWidth;//‚æ‚±
+    float verticalShakeAmount = (float)rand() / (float)RAND_MAX * shakeSwingHeight;//‚½‚Ä
+
+    float shakeY = sin(time) * verticalShakeAmount;
+    float shakeX = cos(time) * horizontalShakeAmount;
+    Camera::SetPosition({ shakeX, 7 + shakeY, -8 });
+
 }
 
 //•`‰æ
@@ -96,6 +117,7 @@ void PlayScene::Draw()
 
     pText->Draw(50, 50, "SCORE:");
     pText->Draw(150, 50, pScore );
+    pText->Draw(850, 50, "Score 200,400,600  SPEEDUP!!");
 }
 
 //ŠJ•ú
