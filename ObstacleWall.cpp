@@ -3,10 +3,13 @@
 #include "Engine/Input.h"
 #include "Engine/BoxCollider.h"
 #include "PlayScene.h"
+#include "iostream"
 
 ObstacleWall::ObstacleWall(GameObject* parent)
-:GameObject(parent,"Obstacle"),hObstacle_(-1),collider_(nullptr)
+:GameObject(parent,"Obstacle"),hObstacle_(-1), moveSpeed(0.2f),collider_(nullptr), playScene_(nullptr), lastScore_(0)
 {
+    playScene_ = dynamic_cast<PlayScene*>(parent);  // PlayScene‚Ö‚ÌŽQÆ‚ðŽæ“¾
+
 }
 
 void ObstacleWall::Initialize()
@@ -22,6 +25,11 @@ void ObstacleWall::Initialize()
 void ObstacleWall::Update()
 {
     float moveSpeed = 0.2f;
+
+    if (playScene_->pScore / 200 > lastScore_ / 200) {
+        moveSpeed += 0.1f;
+        lastScore_ = playScene_->pScore / 200;
+    }
 
     transform_.position_.z -= moveSpeed;
     if (transform_.position_.z <= -6)

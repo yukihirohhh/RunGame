@@ -83,7 +83,7 @@ void PlayScene::Update()
             break;
         }
 
-        pScore += 13;
+        pScore += 10;
         
     }
 }
