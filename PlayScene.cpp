@@ -117,7 +117,6 @@ void PlayScene::Draw()
 
     pText->Draw(50, 50, "SCORE:");
     pText->Draw(150, 50, pScore );
-    pText->Draw(850, 50, "Score 200,400,600  SPEEDUP!!");
 }
 
 //ŠJ•ú
